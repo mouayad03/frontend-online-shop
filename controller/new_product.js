@@ -7,7 +7,7 @@ var imageField = document.getElementById("image-field");
 var descriptionField = document.getElementById("description-field");
 var priceField = document.getElementById("price-field");
 var stockField = document.getElementById("stock-field");
-var newProductRequest
+var newProductRequest;
 
 function onNewProductButtonPressed(event) {
     event.preventDefault();
@@ -24,7 +24,7 @@ function onNewProductButtonPressed(event) {
     };
     
     newProductRequest = new XMLHttpRequest();
-    newProductRequest.open("POST", "../API/V1/Product");
+    newProductRequest.open("POST", "API/V1/Product");
     newProductRequest.onreadystatechange = onNewProductCreated;
     newProductRequest.send(JSON.stringify(productData));   
 }
@@ -35,5 +35,5 @@ function onNewProductCreated(event) {
     }
     alert("The Product was secuessfuly created");
 }
-var finishButton = document.getElementById("finish-button");
+var finishButton = document.createElement("button");
 finishButton.addEventListener("click", onNewProductButtonPressed);

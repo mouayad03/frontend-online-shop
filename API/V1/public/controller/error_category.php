@@ -15,7 +15,7 @@
 		die();
 	}
 	function output_message($output_message) {
-		$output_message = array($output_message);
+		$output_message = $output_message;
 		echo json_encode($output_message);
 
 		die();

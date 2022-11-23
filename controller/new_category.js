@@ -5,13 +5,14 @@ var newCategoryRequest;
 
 function onCategorySubmited(event) {
     event.preventDefault();
+
     var categoryDate = {
         name: nameField.value,
         active: activeField.value
     };
     
     newCategoryRequest = new XMLHttpRequest();
-    newCategoryRequest.open("POST", "../API/V1/Category");
+    newCategoryRequest.open("POST", "API/V1/Category");
     newCategoryRequest.onreadystatechange = onCategoryCreated;
     newCategoryRequest.send(JSON.stringify(categoryDate));   
 }

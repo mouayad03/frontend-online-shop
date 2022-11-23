@@ -111,7 +111,7 @@
 	 *  @OA\Response(response="500", description="An error occurred while fetching the category."))
 	 */
 	$app->get("/Categorys", function (Request $request, Response $response, $args) {
-		//require "controller/require_authentication.php";
+		require "controller/require_authentication.php";
 
 		$category = get_all_categorys();
 

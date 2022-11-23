@@ -6,18 +6,14 @@
     <a class="sign-in" href="login.php">Login</a>
 </nav>
 <h1>Categorys</h1>
-<table id="categorys-table">
-    <tr id="table-row">
-        <th id="active-header">Active</th>
-        <th id="name-header">Name</th>
-    </tr>
+<table class="products-categorys-table" id="categorys-table">
     <tr>
-        <td id="name-td">mouayad</td>
-        <td id="active-td">1</td>
+        <th class="products-categorys-header">Name</th>
+        <th class="products-categorys-header">Active</th>
+        <th class="products-categorys-header">Delete</th>
     </tr>
 </table>
-
-<div id="result-view"></div>
-
-<a href="new_category.php"><button id="new-category">Create a new Category</button></a>
+<br>
+<br>
+<a href="new_category.php"><button class="create-new" id="new-category">Create a new Category</button></a>
 <script src="controller/categorys.js"></script>

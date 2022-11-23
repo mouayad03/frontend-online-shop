@@ -32,10 +32,6 @@ nav a:hover {
     font-size: 15px;
 }
 
-nav a.login {
-    margin: 0px;
-}
-
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -114,4 +110,69 @@ div button:hover {
     background-color: rgb(167, 165, 165);
     font-size: 17px;
     color: #ffffff;
+}
+
+button.create-new {
+    color: rgb(255, 255, 255);
+    margin: auto;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(98, 98, 98);
+    font-family: sans-serif;
+    font-size: larger;
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+}
+
+button.finish {
+    Color: white;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(144, 144, 144);
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 15px;
+    font-size: large;
+}
+
+table.products-categorys-table {
+    border: 1px solid rgb(19, 19, 19);
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(167, 166, 166);
+}
+
+th.products-categorys-header {
+    border: 3px solid rgb(38, 38, 38);
+    border-collapse: collapse;
+    background-color: rgb(143, 143, 143);
+    font-size: larger;
+}
+
+td {
+    border: 3px solid rgb(46, 46, 46);
+    border-collapse: collapse;
+    background-color: rgb(235, 235, 235);
+    color: rgb(0, 0, 0);
+    font-size: large;
+}
+
+input {
+    margin-left: auto;
+}
+
+table.new-category-product {
+    border-collapse: collapse;
+    border: 2px solid rgb(84, 82, 82);
+}
+
+td.new-category-product {
+    color: black;
+    font-size: large;
+    border: 1px solid #afafaf;
+}
+
+body.new-category-product {
+    background-color: rgb(236, 236, 236);
 }
