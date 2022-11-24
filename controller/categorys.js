@@ -1,4 +1,3 @@
-var id;
 var categorysTable = document.getElementById("categorys-table");
 var categorysResponse = [ ];
 var deleteRequest;
@@ -17,7 +16,6 @@ function onCategoryResponsed() {
   categorysResponse = JSON.parse(categoryRequest.responseText);
   
   for (var i = 0; i < categorysResponse.length; i++) {
-    id.innerText = categorysResponse[i].category_id;
 
     var categoryRow = document.createElement("tr");
     categorysTable.appendChild(categoryRow);
@@ -32,14 +30,19 @@ function onCategoryResponsed() {
 
     var deleteAndEditCell = document.createElement("td");
     categoryRow.appendChild(deleteAndEditCell);
+    deleteAndEditCell.className = "delete-and-edit-td";
 
     var deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
+    deleteButton.className = "edit-and-delete-button";
+    deleteButton.setAttribute("delete-product-id", categorysResponse[i].category_id);
     deleteButton.addEventListener("click", onDeleteButtonPressed);
     deleteAndEditCell.appendChild(deleteButton);
   
     var editButton = document.createElement("button");
     editButton.innerText = "Edit";
+    editButton.className = "edit-and-delete-button"
+    editButton.setAttribute("edit-product-id", categorysResponse[i].category_id);
     editButton.addEventListener("click", onEditButtonPressed);
     deleteAndEditCell.appendChild(editButton);
   }
@@ -47,7 +50,7 @@ function onCategoryResponsed() {
 
 function onDeleteButtonPressed(event) {
   deleteRequest = new XMLHttpRequest();
-  deleteRequest.open("Delete", "API/V1/Category/" + id);
+  deleteRequest.open("Delete", "API/V1/Category/" + event.currentTarget.getAttribute("delete-category-id"));
   deleteRequest.onreadystatechange = onCategoryDeleteResponsed;
   deleteRequest.send();
 }
@@ -61,7 +64,7 @@ function onCategoryDeleteResponsed() {
 
 function onEditButtonPressed(event) {
   editRequest = new XMLHttpRequest();
-  editRequest.open("PUT", "API/V1/Category/" + id);
+  editRequest.open("PUT", "API/V1/Category/" + event.currentTarget.getAttribute("edit-category-id"));
   editRequest.onreadystatechange = onEditResponsed;
   editRequest.send(JSON.stringify(categoryDate));  
 }

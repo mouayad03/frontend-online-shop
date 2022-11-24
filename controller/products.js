@@ -48,5 +48,51 @@ function onCategoryResponsed() {
     var stockCell = document.createElement("td");
     stockCell.innerText = productResponse[i].stock;
     productRow.appendChild(stockCell);
+
+    var deleteAndEditCell = document.createElement("td");
+    productRow.appendChild(deleteAndEditCell);
+    deleteAndEditCell.className = "delete-and-edit-td";
+
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "edit-and-delete-button";
+    deleteButton.setAttribute("delete-product-id", productResponse[i].product_id);
+    deleteButton.addEventListener("click", onDeleteButtonPressed);
+    deleteAndEditCell.appendChild(deleteButton);
+  
+    var editButton = document.createElement("button");
+    editButton.innerText = "Edit";
+    editButton.className = "edit-and-delete-button"
+    editButton.setAttribute("edit-product-id", productResponse[i].product_id);
+    editButton.addEventListener("click", onEditButtonPressed);
+    deleteAndEditCell.appendChild(editButton);
   }
+}
+
+function onDeleteButtonPressed(event) {
+  deleteRequest = new XMLHttpRequest();
+  deleteRequest.open("Delete", "API/V1/Product/" + event.currentTarget.getAttribute("delete-product-id"));
+  deleteRequest.onreadystatechange = onCategoryDeleteResponsed;
+  deleteRequest.send();
+}
+
+function onCategoryDeleteResponsed() {
+  if (deleteRequest.readyState < 4) {
+    return;
+  }
+  alert("Deleted");
+}
+
+function onEditButtonPressed(event) {
+  editRequest = new XMLHttpRequest();
+  editRequest.open("PUT", "API/V1/Product/" + event.currentTarget.getAttribute("edit-product-id"));
+  editRequest.onreadystatechange = onEditResponsed;
+  editRequest.send(JSON.stringify(categoryDate));  
+}
+
+function onEditResponsed(event) {
+  if (editRequest.readyState < 4) {
+    return;
+  }
+  alert("Updated");
 }

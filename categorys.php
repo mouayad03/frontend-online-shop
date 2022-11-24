@@ -10,7 +10,7 @@
     <tr>
         <th class="products-categorys-header">Name</th>
         <th class="products-categorys-header">Active</th>
-        <th class="products-categorys-header">Delete</th>
+        <th class="products-categorys-header">Delete/Edit</th>
     </tr>
 </table>
 <br>

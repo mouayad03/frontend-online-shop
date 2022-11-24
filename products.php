@@ -18,6 +18,7 @@
         <th class="products-categorys-header">Description</th>
         <th class="products-categorys-header">Price</th>
         <th class="products-categorys-header">Stock</th>
+        <th class="products-categorys-header">Delete/Edit</th>
     </tr>
 </table>
 <br>

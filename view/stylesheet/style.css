@@ -138,13 +138,13 @@ button.finish {
 
 table.products-categorys-table {
     border: 1px solid rgb(19, 19, 19);
-    width: 100%;
     border-collapse: collapse;
     background-color: rgb(167, 166, 166);
 }
 
 th.products-categorys-header {
     border: 3px solid rgb(38, 38, 38);
+    min-width: 100px;
     border-collapse: collapse;
     background-color: rgb(143, 143, 143);
     font-size: larger;
@@ -175,4 +175,15 @@ td.new-category-product {
 
 body.new-category-product {
     background-color: rgb(236, 236, 236);
+}
+
+button.edit-and-delete-button {
+    color: rgb(255, 255, 255);
+    margin: auto;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(183, 183, 183);
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+    font-size: large;
 }
