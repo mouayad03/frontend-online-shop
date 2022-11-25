@@ -30,6 +30,6 @@
 <a href="categorys.php"><button class="finish" id="finish-button">Finish</button></a>
 
 <!--Here will the create_category php connected with the JavaScript.-->
-<script src="controller/new_category.js"></script>
+<script src="controller/edit_category.js"></script>
     
 </body>

@@ -8,6 +8,7 @@
 
 <h1>Products</h1>
 
+<!--Here is the table created for the list of the products.-->
 <table class="products-categorys-table" id="products-table">
     <tr class="products-row">
         <th class="products-categorys-header">Sku</th>
@@ -23,5 +24,9 @@
 </table>
 <br>
 <br>
+
+<!--Here is the Button created and definted-->
 <a href="new_product.php"><button class="create-new" id="new-product">Create a new Product</button></a>
+
+<!--Here will the php connected with the JavaScript-->
 <script src="controller/products.js"></script>

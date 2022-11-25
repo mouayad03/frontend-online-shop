@@ -1,4 +1,6 @@
-var id = null;
+/*
+ *Here are new variables definted
+ */
 var skuField = document.getElementById("sku-field");
 var activeField = document.getElementById("active-field");
 var categoryIdField = document.getElementById("category-field");
@@ -9,6 +11,9 @@ var priceField = document.getElementById("price-field");
 var stockField = document.getElementById("stock-field");
 var newProductRequest;
 
+/**
+ * Here is the request of POST category requested
+ */
 function onNewProductButtonPressed(event) {
     event.preventDefault();
 
@@ -29,11 +34,27 @@ function onNewProductButtonPressed(event) {
     newProductRequest.send(JSON.stringify(productData));   
 }
 
+/**
+ * Here is the POST responsed
+ */
 function onNewProductCreated(event) {
     if (newProductRequest.readyState < 4) {
         return;
     }
-    alert("The Product was secuessfuly created");
-}
-var finishButton = document.createElement("button");
+    /**
+     * The response Messages.
+     */
+    var responseStatus = newCategoryRequest.status;
+
+    if (responseStatus == 200) {
+       alert("Successfuly created.");
+    }
+    else {
+       alert("Error: Please try again");
+    }}
+
+/**
+ * Here is the Button created and definted, when the button clicked, will the response responed
+ */
+var finishButton = document.getElementById("product-button");
 finishButton.addEventListener("click", onNewProductButtonPressed);

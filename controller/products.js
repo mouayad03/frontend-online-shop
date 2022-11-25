@@ -1,11 +1,22 @@
+/*
+ *Here are new variables definted
+ */
 var productsTable = document.getElementById("products-table");
 var productResponse = [ ];
 
+/**
+ * Direct if I open the category Webseit will list all Categorys 
+ */
 var productRequest = new XMLHttpRequest();
 productRequest.open("GET", "API/V1/Products");
 productRequest.onreadystatechange = onCategoryResponsed;
 productRequest.send();
 
+/**
+ * Here is a for-loop definted to list all Categorys.
+ * Here is the ID definted too, for the delete and edit
+ * Here are all td created.
+ */
 function onCategoryResponsed() {
   if (productRequest.readyState < 4) {
     return;
@@ -69,6 +80,9 @@ function onCategoryResponsed() {
   }
 }
 
+/**
+ * Here is the delete request definted
+ */
 function onDeleteButtonPressed(event) {
   deleteRequest = new XMLHttpRequest();
   deleteRequest.open("Delete", "API/V1/Product/" + event.currentTarget.getAttribute("delete-product-id"));
@@ -76,23 +90,28 @@ function onDeleteButtonPressed(event) {
   deleteRequest.send();
 }
 
+/**
+ * Here is the request responsed
+ */
 function onCategoryDeleteResponsed() {
   if (deleteRequest.readyState < 4) {
     return;
   }
-  alert("Deleted");
-}
 
-function onEditButtonPressed(event) {
-  editRequest = new XMLHttpRequest();
-  editRequest.open("PUT", "API/V1/Product/" + event.currentTarget.getAttribute("edit-product-id"));
-  editRequest.onreadystatechange = onEditResponsed;
-  editRequest.send(JSON.stringify(categoryDate));  
-}
+  responseStatus = console.log(deleteRequest.status);
 
-function onEditResponsed(event) {
-  if (editRequest.readyState < 4) {
-    return;
+  if (responseStatus = 200) {
+    alert("Deleted");
   }
-  alert("Updated");
+  else {
+    alert("Not found");
+  }
 }
+
+/**
+ * Here is the edit request definted
+ */
+function onEditButtonPressed(event) {
+  window.open("edit_product.php#" + event.currentTarget.getAttribute("edit-product-id"), "_self"); 
+  
+  }

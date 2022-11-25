@@ -6,6 +6,7 @@
     <a class="sign-in" href="login.php">Login</a>
 </nav>
 <h1>Categorys</h1>
+<!--Here is the table created for the list of the categorys.-->
 <table class="products-categorys-table" id="categorys-table">
     <tr>
         <th class="products-categorys-header">Name</th>
@@ -15,5 +16,9 @@
 </table>
 <br>
 <br>
+
+<!--Here is the Button created and definted -->
 <a href="new_category.php"><button class="create-new" id="new-category">Create a new Category</button></a>
+
+<!--Here will the php connected with the JavaScript-->
 <script src="controller/categorys.js"></script>

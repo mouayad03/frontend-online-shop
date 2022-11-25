@@ -62,6 +62,6 @@
 <button class="finish" id="product-button">Finish</button>
 
 <!--Here will the create_product php connected with the JavaScript.-->
-<script src="controller/new_product.js"></script>
+<script src="controller/edit_product.js"></script>
 
 </body>
